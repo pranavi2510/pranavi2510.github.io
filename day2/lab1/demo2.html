@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getDay()">Click</button>
+    <script>
+        function getDay(){
+            let day;
+            day= prompt("Enter day of the week");
+            let message;
+            switch (day){
+                case "Monday":
+                    message = "It's the start of the week.";
+                    break;
+                case "Tuesday":
+                    message = "It's a weekday";
+                    break;
+                case "Wednesday":
+                    message = "It's a weekday";
+                    break;
+                case "Thursday":
+                    message = "It's a weekday";
+                    break;
+                case "Friday":
+                    message = "It's almost the weekend!";
+                    break;
+                default:
+                    message = "It's the weekend";
+            
+            
+            }
+            alert(message);    
+  
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" action="">
+        <label for="uname">Name: </label>
+        <input id="myInput" name="uname" type="text" />
+        <input type="button" value="submit" onclick="displayOp()" /> 
+    </form>
+    <script>
+        function displayOp(){
+            const uname = document.getElementById("myInput").value;
+                console.log(uname);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Toggle an element</h1>
+        <p id="myEle">This is the element to toggle</p>
+        
+        <button onclick="hideElement()">Click to hide the text above</button>
+               <script>
+                function hideElement(){
+                    let myEle = document.getElementById("myEle");
+                    //myEle.style.display = "none";
+                    myEle.hidden = (myEle.hidden)?false : true;
+                }
+                
+        </script>
+</body>
+</html>

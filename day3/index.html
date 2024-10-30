@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Two Numbers</title>
+    <script>
+        function validate(){
+            // let n1 = Number(document.getElementById("num1").value);
+            // let n2 = Number(document.getElementById("num2").value);
+
+            let n1 = Number(document.querySelector("#num1").value);
+            let n2 = Number(document.querySelector("#num2").value);
+
+
+            if (isNaN(n1)||isNaN(n2)) {
+                alert("The number entered is not a number");
+            } else {
+                alert(`${n1} + ${n2} = ${n1+n2}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Example: Addition of 2 Numbers</h1>
+    <form action="calculate">
+        <fieldset>
+            <legend>Calculate</legend>
+            <label for="num1">Number 1: </label>
+            <input type="text" name="num1" id="num1">
+            <br>
+            <br>
+
+            <label for="num2">Number 2: </label>
+            <input type="text" name="num2" id="num2">
+            <br>
+            <br>
+            
+            <input type="button" value="Add" onclick="validate()"/>    
+        </fieldset>
+        
+    </form>
+</body>
+</html>

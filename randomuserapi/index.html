@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User</h1>
+    <div id="user-profile"></div>
+    <script>
+        const url = "https://randomuser.me/api";
+
+        const getUser = async() =>{
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log(data.results[0]);
+            const user = data.results[0];
+            document.getElementById("user-profile").innerHTML = `
+               <p>Name : ${user.name.first} ${user.name.last}</p>
+               <p> Email: ${user.email}</p>
+               <p>Location:${user.location.city}, ${user.location.country}</p>
+              `;
+        }
+        getUser();
+    </script>
+
+</body>
+</html>
