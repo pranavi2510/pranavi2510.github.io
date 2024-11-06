@@ -1,14 +1,13 @@
-package com.deloitte.com.demo;
+package com.cloudthat.productsapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class ProductsappApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ProductsappApplication.class, args);
 	}
 
 }

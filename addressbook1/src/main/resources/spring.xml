@@ -6,14 +6,18 @@
 
     <bean id="book" class="org.example.Book">
         <!-- collaborators and configuration for this bean go here -->
+<!--        <constructor-arg index="0" value="1234567" type="String" />-->
+<!--        <constructor-arg index="1" value="Introduction to Spring" type="String" />-->
+<!--        <constructor-arg index="2" value="James Gosling" type="String" />-->
+        <property name="author" >
+            <bean id="author" class="org.example.Author">
+                <property name="authorName" value="Pranavi" />
+                <property name="numOfPub" value="12" />
+            </bean>
+        </property>
         <property name="isbn" value="1234567"></property>
         <property name="title" value="Introduction to Spring"></property>
     </bean>
-
-    <bean id="..." class="...">
-        <!-- collaborators and configuration for this bean go here -->
-    </bean>
-
-   <!-- more bean definitions go here -->
+    <!-- more bean definitions go here -->
 
 </beans>

@@ -1,5 +1,10 @@
+
+
 package org.example;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Book {
     private String isbn;
     private String title;
