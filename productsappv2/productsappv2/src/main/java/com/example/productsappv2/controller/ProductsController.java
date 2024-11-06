@@ -6,6 +6,7 @@ import com.example.productsappv2.model.ApiResponse;
 import com.example.productsappv2.model.ProductModel;
 import com.example.productsappv2.model.ProductRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,7 @@ public class ProductsController {
         return new ResponseEntity<ApiResponse>(new ApiResponse(true,"Product Fetch Successful", productModel ), HttpStatus.OK );
     }
 
+
     @PutMapping("/products/{productId}")
     public Product updateProduct(@PathVariable("productId") Long productId, @RequestBody Product product){
         return productService.updateProduct(productId, product);
@@ -50,5 +52,15 @@ public class ProductsController {
     @GetMapping("/products/names/{productName}")
     public Product getProductByName(@PathVariable("productName") String productName){
         return productService.getProductByName(productName);
+    }
+    @GetMapping("/products/pages")
+    public ResponseEntity<ApiResponse> getProducts(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "productName") String sort,
+            @RequestParam(defaultValue = "asc") String direction
+    ){
+            Page<ProductModel> products = productService.getProducts(page, size, sort, direction);
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true,"Products Fetch Successful", products ), HttpStatus.OK );
     }
 }
